@@ -15,6 +15,7 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
+
         return null;
     }
 
@@ -28,7 +29,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String modString = base.replaceAll(remove, "") ;
+
+        return modString;
     }
 
     /**
@@ -39,7 +42,9 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
+
     public Boolean containsEqualNumberOfIsAndNot(String input){
+        Boolean equalNumber = false;
         return null;
     }
 
@@ -51,7 +56,22 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+    boolean happy = false;
+
+        char [] inputToArray = input.toCharArray();
+
+     for (int index = 1; index < input.length()-1; index++){
+         if(inputToArray[index] == 'g') {
+             if (inputToArray[index] == input.charAt(index - 1) || inputToArray[index] == input.charAt(index + 1)) {
+
+                 happy = true;
+
+             }
+
+            else {happy = false;}
+         }
+    }
+     return happy;
     }
 
 
