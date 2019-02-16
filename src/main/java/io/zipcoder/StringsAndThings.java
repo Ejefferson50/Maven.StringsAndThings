@@ -14,10 +14,25 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
+    public Integer countYZ(String input) {
+        int counter = 0;
 
-        return null;
+        String[] inputArray = input.split(" ", 0);
+
+
+        for (String index : inputArray) {
+            if (inputArray.length - 1 == 'z' || inputArray.length - 1 == 'y') {
+            }
+            counter++;
+        }
+        return counter;
     }
+
+
+
+
+
+
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
@@ -43,10 +58,31 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
 
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        Boolean equalNumber = false;
-        return null;
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
+        boolean equals = true;
+        int counterIS = 0;
+        int counterNOT = 0;
+
+
+        char[] mod = input.toLowerCase().toCharArray();
+
+        for (int i = 0; i < mod.length - 1; i++) {
+            if (mod[i] == 'i' && mod[i + 1] == 's') {
+                counterIS++;
+            } else if (mod[i] == 'n' && mod[i + 1] == 'o' && mod[i + 2] == 't') {
+                counterNOT++;
+            }
+
+
+        }
+        if (counterIS != counterNOT) {
+            equals = false;
+        }
+return equals;
     }
+
+
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
@@ -83,6 +119,14 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int counter = 0;
+        char[] inputChar = input.toCharArray();
+        for (int index = 1; index < inputChar.length-1; index++){
+            if (inputChar[index] == inputChar[index -1] && inputChar[index] == inputChar[index+1]){
+                counter++;
+            }
+        }
+
+        return counter;
     }
 }
